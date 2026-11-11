@@ -1,0 +1,41 @@
+# Configuración Principal de Codex (Academic Notes Engine)
+# Diseñado para integración con Agentes de IA mediante Skills (sin peticiones directas a APIs)
+
+# Rutas de Obsidian
+obsidian_vault_path: "C:/Users/Josnaiker Rivas/Documents/Obsidian/Universidad"
+
+# Subcarpeta dentro del Vault donde se guardarán las notas
+notes_subfolder: "Clases"
+
+# Subcarpeta dentro del Vault donde se guardarán las imágenes de diapositivas
+attachments_subfolder: "attachments/Codex"
+
+# Ruta monitoreada por el daemon para grabaciones de OBS
+obs_recordings_path: "C:/Users/Josnaiker Rivas/Videos"
+
+# Carpeta de almacenamiento para bundles de sesiones preparadas para agentes de IA
+bundles_path: ".codex_bundles"
+
+# Configuración de Extracción de Audio
+audio:
+  sample_rate: 16000
+  channels: 1
+  codec: "libopus"       # libopus produce archivos ligeros y nítidos
+  bitrate: "32k"
+  extension: ".opus"
+
+# Configuración de Detección de Diapositivas (Google Meet / OBS)
+vision:
+  # Umbral de cambio de escena de ffmpeg (entre 0.03 y 0.10)
+  scene_threshold: 0.05
+  # Tiempo mínimo en segundos entre capturas para evitar ráfagas
+  min_interval_seconds: 5.0
+  # Umbral de diferencia perceptual (0.0 a 1.0) para descartar frames repetidos
+  diff_threshold: 0.08
+  # Ancho de redimensión para imágenes adjuntas
+  max_width: 1920
+
+# Configuración del Daemon Watcher
+watcher:
+  debounce_seconds: 8
+  video_extensions: [".mkv", ".mp4", ".mov", ".webm", ".m4a", ".mp3", ".wav"]

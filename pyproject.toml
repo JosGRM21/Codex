@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "codex-academic"
+version = "0.2.0"
+description = "Motor de procesamiento de clases y soporte para agentes de IA mediante skills hacia Obsidian"
+authors = [{ name = "Josnaiker Rivas" }]
+requires-python = ">=3.10"
+dependencies = [
+    "watchdog>=7.1.0",
+    "pyyaml>=6.0.3",
+    "pillow>=13.0.0",
+    "pydantic>=2.14.3",
+    "python-dotenv>=1.2.4",
+    "rich>=15.0.0",
+    "typer>=0.27.3",
+]
+
+[project.scripts]
+codex = "codex.cli:app"
+
+[tool.setuptools.packages.find]
+include = ["codex*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

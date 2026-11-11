@@ -1,0 +1,8 @@
+watchdog>=7.1.0
+pyyaml>=6.0.3
+pillow>=13.0.0
+pydantic>=2.14.3
+python-dotenv>=1.2.4
+rich>=15.0.0
+typer>=0.27.3
+pytest>=9.2.0
